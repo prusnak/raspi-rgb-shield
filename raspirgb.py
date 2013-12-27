@@ -16,16 +16,16 @@ class RaspiRGB(object):
 		self.bus.write_byte_data(self.ADDR, 0x17, 0xAA)
 		self.set(0, 0, 0)
 
-	def set(r, g, b):
+	def set(self, r, g, b):
 		self.setr(r)
 		self.setg(g)
 		self.setb(b)
 
-	def setr(v):
+	def setr(self, v):
 		self.bus.write_byte_data(self.ADDR, 2 + self.PWM_R, int(v))
 
-	def setg(v):
+	def setg(self, v):
 		self.bus.write_byte_data(self.ADDR, 2 + self.PWM_G, int(v))
 
-	def setb(v):
+	def setb(self, v):
 		self.bus.write_byte_data(self.ADDR, 2 + self.PWM_B, int(v))
