@@ -1,7 +1,11 @@
 #!/usr/bin/python
 from raspirgb import RaspiRGB
+import math
+import time
 
 rgb = RaspiRGB()
+
+t = 0.0
 
 while True:
 	r = 128 + 127 * math.sin(1.0 * t)
