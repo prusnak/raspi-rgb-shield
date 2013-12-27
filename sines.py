@@ -12,5 +12,5 @@ while True:
 	g = 128 + 127 * math.sin(1.5 * t)
 	b = 128 + 127 * math.sin(2.0 * t)
 	rgb.set(r, g, b)
-	t += 0.1
+	t += 0.01
 	time.sleep(0.01)
