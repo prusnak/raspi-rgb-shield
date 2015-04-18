@@ -1,3 +1,14 @@
 Raspberry Pi RGB Shield
 =======================
 
+1. enable I2C using raspi-config tool
+
+2. install dependencies using
+
+  sudo install git python-smbus python-tornado
+
+3. clone the repository
+
+  git clone https://github.com/fabhack/raspi-rgb-shield.git
+
+4. enjoy!
