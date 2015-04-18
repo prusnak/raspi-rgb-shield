@@ -47,7 +47,7 @@
 			blue = $( "#blue" ).slider( "value" ),
 			hex = hexFromRGB( red, green, blue );
 		$( "#swatch" ).css( "background-color", "#" + hex );
-		$.ajax('/set-' + hex);
+		$.ajax('/set/' + hex);
 	}
 	$(function() {
 		$( "#red, #green, #blue" ).slider({
