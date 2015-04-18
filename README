@@ -5,7 +5,7 @@ Raspberry Pi RGB Shield
 
 2. install dependencies using
 
-  sudo install git python-smbus python-tornado
+  sudo install git python-netifaces python-smbus python-tornado
 
 3. clone the repository
 
