@@ -19,7 +19,7 @@ class RaspiRGB(object):
 			self.bus.write_byte_data(self.ADDR, 0x15, 0xAA)
 			self.bus.write_byte_data(self.ADDR, 0x16, 0xAA)
 			self.bus.write_byte_data(self.ADDR, 0x17, 0xAA)
-			self.set(0, 0, 0)
+			self.setrgb(0, 0, 0)
 
 	def setrgb(self, r, g, b):
 		self.setr(r)
