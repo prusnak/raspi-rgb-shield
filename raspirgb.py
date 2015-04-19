@@ -10,15 +10,16 @@ class RaspiRGB(object):
 			import smbus
 			self.bus = smbus.SMBus(1)
 			print 'I2C bus found: %s' % self.bus
+		except:
+			print 'I2C bus NOT found'
+			self.bus = None
+		if self.bus:
 			self.bus.write_byte_data(self.ADDR, 0x00, 0x00)
 			self.bus.write_byte_data(self.ADDR, 0x14, 0xAA)
 			self.bus.write_byte_data(self.ADDR, 0x15, 0xAA)
 			self.bus.write_byte_data(self.ADDR, 0x16, 0xAA)
 			self.bus.write_byte_data(self.ADDR, 0x17, 0xAA)
 			self.set(0, 0, 0)
-		except:
-			print 'I2C bus NOT found'
-			self.bus = None
 
 	def setrgb(self, r, g, b):
 		self.setr(r)
