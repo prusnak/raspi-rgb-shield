@@ -9,6 +9,7 @@ class RaspiRGB(object):
 		try:
 			import smbus
 			self.bus = smbus.SMBus(1)
+			print 'I2C bus found: %s', self.buf
 			self.bus.write_byte_data(self.ADDR, 0x00, 0x00)
 			self.bus.write_byte_data(self.ADDR, 0x14, 0xAA)
 			self.bus.write_byte_data(self.ADDR, 0x15, 0xAA)
@@ -18,10 +19,14 @@ class RaspiRGB(object):
 		except:
 			self.bus = None
 
-	def set(self, r, g, b):
+	def setrgb(self, r, g, b):
 		self.setr(r)
 		self.setg(g)
 		self.setb(b)
+
+	def setraw(self, i, v):
+		if self.bus:
+			self.bus.write_byte_data(self.ADDR, 2 + int(i), int(v))
 
 	def setr(self, v):
 		if self.bus:
